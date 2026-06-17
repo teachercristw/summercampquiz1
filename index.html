@@ -107,7 +107,7 @@
             background-color: #fff; background-size: 100% 100%; /* Stretch to fill exactly */
             background-position: center; background-repeat: no-repeat;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6); overflow: hidden;
-            border: none; /* Removed border to prevent any white edges */
+            border: none;
         }
 
         .cert-name-display { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; color: #0f172a; text-align: center; text-shadow: 2px 2px 4px rgba(255,255,255,0.8); }
@@ -283,13 +283,13 @@
         
         <div class="question-wrapper">
             <label style="font-weight: bold; font-size: 1.2rem;">First Name:</label>
-            <input type="text" id="cadet-first-name" placeholder="E.g., Cris">
+            <input type="text" id="cadet-first-name" placeholder="E.g., Sam">
             <br><br>
             <label style="font-weight: bold; font-size: 1.2rem;">Code Name (Optional):</label>
-            <input type="text" id="cadet-code-name" placeholder="E.g., The Star Hunter">
+            <input type="text" id="cadet-code-name" placeholder="E.g., Moon God">
             <br><br>
             <label style="font-weight: bold; font-size: 1.2rem;">Last Name (Optional):</label>
-            <input type="text" id="cadet-last-name" placeholder="E.g., Saranza">
+            <input type="text" id="cadet-last-name" placeholder="E.g., Lee">
         </div>
         <button class="btn-primary" style="width: 100%;" onclick="renderCertificate()">Show My Certificate 🌟</button>
     </div>
@@ -380,8 +380,9 @@
 </div>
 
 <script>
+    // UPDATED: certBase64 now defaults to "certificate.png" which points directly to your GitHub file!
     let config = {
-        certBase64: "", 
+        certBase64: "certificate.png", 
         homeBgBase64: "",
         fontFamily: "'Century Gothic', sans-serif",
         fontSize: "48",
