@@ -420,6 +420,8 @@
     }
  
     function showQuestion(index) {
+        currentQIndex = index; // The fix
+
         document.querySelectorAll('.question-slide').forEach(el => el.classList.add('hidden'));
         document.getElementById(`slide-${index}`).classList.remove('hidden');
         
@@ -462,7 +464,7 @@
         if (!isValid) return document.getElementById('error-quiz').classList.remove('hidden');
  
         if (currentQIndex === runtimeQuestions.length - 1) finalizeObjectiveGrades();
-        else showQuestion(++currentQIndex);
+        else showQuestion(currentQIndex + 1); // The fix
     }
  
     function finalizeObjectiveGrades() {
